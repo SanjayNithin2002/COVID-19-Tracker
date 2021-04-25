@@ -1,0 +1,52 @@
+{% extends "basic.html" %} 
+
+{% block head %}  
+
+{{ data.region }}
+{% endblock %}  
+
+{% block body %} 
+<h2>{{ data.region }}</h2>
+<table class="container">
+    <thead>
+    <tr>
+        <th><h1>Data</h1></th>
+        <th><h1>Values</h1></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Province</td>
+        <td>{{ data.region}}</td>
+    </tr>
+    <tr>
+        <td>Total infected</td>
+        <td>{{ data.totalInfected }}</td>
+    </tr>
+    <tr>
+        <td>Newly Infected</td>
+        <td>{{ data.newInfected }}</td>
+    </tr>
+    <tr>
+        <td>Recovered </td>
+        <td>{{ data.recovered }}</td>
+    </tr>
+    <tr>
+        <td>New recovered</td>
+        <td>{{ data.newRecovered }}</td>
+    </tr>
+    <tr>
+        <td>Deaths</td>
+        <td>{{ data.deceased }}</td>
+    </tr>
+    <tr>
+        <td>New deaths</td>
+        <td>{{ data.newDeceased }}</td>
+    </tr>
+    </tbody>
+</table>
+<form action = "/stateSearch" method = "POST">
+    <button name="back" id="back" value = "true">Back</button>
+</form>
+
+{% endblock %}
